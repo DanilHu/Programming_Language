@@ -8,7 +8,8 @@
     txqueuelen：缓冲区大小；<br>
     RX：接收情形；TX：传送情形；
     ```
-    * 修改网络配置文件，/etc/sysconfig/network-scripts/ifcfg-ens33
+    * 修改网络配置文件
+    step1：/etc/sysconfig/network-scripts/ifcfg-ens33
     ```
     这里注意 etc是and so on 来源于法语 et cetera，译为等等；Linux的配置文件一般放在这个文件夹下，意为零碎的东西
     ```
@@ -36,5 +37,17 @@
    DNS2=8.8.8.5#
    ZONE=public#
    ```
+   通过修改其中的IPADDR和NETMASK和GATEWAY就可以更改IP地址了<br>
+   step2：/etc/sysconfig/network
+   **命令：hostname也可以查看和临时修改主机名**
+   文件内容如下：
+   ```
+   NETWORKING=yes # 代表正在运行
+   HOSTNAME=localhost.localdomain # 标识主机名，Linux的主机名可以是一样的
+   ```
+   step3：/etc/resolv.conf
+   `nameserver IPaddr`
+   标识DNS服务器
+   
    DHCP：DHCP（动态主机配置协议）是一个局域网的网络协议。指的是由服务器控制一段IP地址范围，客户机登录服务器时就可以自动获得服务器分配的IP地址和子网掩码，因此需要在局域网内有DHCP服务器才行(局域网本身的设计就是用来短距离通信的，只要网线连在一起就不需要访问互联网可以直接通信)。<br>
    路由协议：指导路由器中路由表的生成；包括内部网关协议`RIP——路由信息协议(Routing Information Protocol)`，内部网关协议`OSPF——开放最短路径优先(Open Shortest Path First)`，外部网关协议`BGP——边界网关协议`
