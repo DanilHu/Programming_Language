@@ -37,3 +37,4 @@
    ZONE=public#
    ```
    DHCP：DHCP（动态主机配置协议）是一个局域网的网络协议。指的是由服务器控制一段IP地址范围，客户机登录服务器时就可以自动获得服务器分配的IP地址和子网掩码。
+   路由协议：指导路由器中路由表的生成；包括内部网关协议`RIP——路由信息协议(Routing Information Protocol)`，内部网关协议`OSPF——开放最短路径优先(Open Shortest Path First)`，外部网关协议`BGP——边界网关协议`
