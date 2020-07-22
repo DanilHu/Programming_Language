@@ -9,7 +9,6 @@
     RX：接收情形；TX：传送情形；
     ```
     * 修改网络配置文件
-    
     1. /etc/sysconfig/network-scripts/ifcfg-ens33
     ```
     这里注意 etc是and so on 来源于法语 et cetera，译为等等；Linux的配置文件一般放在这个文件夹下，意为零碎的东西
@@ -38,7 +37,7 @@
     DNS2=8.8.8.5#
     ZONE=public#
     ```
-    通过修改其中的IPADDR和NETMASK和GATEWAY就可以更改IP地址了<br>
+    通过修改其中的IPADDR和NETMASK和GATEWAY就可以更改IP地址了
     2. /etc/sysconfig/network<br>
     **命令：hostname也可以查看和临时修改主机名**<br>
     文件内容如下：
