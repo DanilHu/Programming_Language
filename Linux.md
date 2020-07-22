@@ -1,6 +1,6 @@
 # 网络
 1. Linux配置IP地址配置
-    * ifconfig 命令查看网络配置：`ifconfig ens33 IP_addr mask `
+    * ifconfig 命令查看网络配置：`ifconfig ens33 IP_addr mask `<br>
     ```
     UP：表示生效；
     BRODCAST：表示支持组播；
