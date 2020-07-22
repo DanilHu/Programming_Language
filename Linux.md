@@ -13,7 +13,7 @@
     ```
     这里注意 etc是and so on 来源于法语 et cetera，译为等等；Linux的配置文件一般放在这个文件夹下，意为零碎的东西
     ```
-    文件内容如下：
+    	文件内容如下：
     ```
     TYPE="Ethernet"		#网卡类型（通常是Ethemet以太网）
     PROXY_METHOD="none"	#代理方式：为关闭状态
@@ -37,10 +37,10 @@
     DNS2=8.8.8.5#
     ZONE=public#
     ```
-    通过修改其中的IPADDR和NETMASK和GATEWAY就可以更改IP地址了
+    	通过修改其中的IPADDR和NETMASK和GATEWAY就可以更改IP地址了
     2. /etc/sysconfig/network<br>
-    **命令：hostname也可以查看和临时修改主机名**<br>
-    文件内容如下：
+    	**命令：hostname也可以查看和临时修改主机名**<br>
+    	文件内容如下：
     ```
     NETWORKING=yes # 代表正在运行
     HOSTNAME=localhost.localdomain # 标识主机名，Linux的主机名可以是一样的
