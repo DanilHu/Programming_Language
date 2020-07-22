@@ -9,7 +9,7 @@
     RX：接收情形；TX：传送情形；
     ```
     * 修改网络配置文件<br>
-    **step1：/etc/sysconfig/network-scripts/ifcfg-ens33
+    **step1：/etc/sysconfig/network-scripts/ifcfg-ens33**
     ```
     这里注意 etc是and so on 来源于法语 et cetera，译为等等；Linux的配置文件一般放在这个文件夹下，意为零碎的东西
     ```
@@ -38,14 +38,14 @@
    ZONE=public#
    ```
    通过修改其中的IPADDR和NETMASK和GATEWAY就可以更改IP地址了<br>
-   **step2：/etc/sysconfig/network<br>
+   **step2：/etc/sysconfig/network**<br>
    **命令：hostname也可以查看和临时修改主机名**<br>
    文件内容如下：
    ```
    NETWORKING=yes # 代表正在运行
    HOSTNAME=localhost.localdomain # 标识主机名，Linux的主机名可以是一样的
    ```
-   **step3：/etc/resolv.conf
+   **step3：/etc/resolv.conf**
    `nameserver IPaddr`
    标识DNS服务器
    
