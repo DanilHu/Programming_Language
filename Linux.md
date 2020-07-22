@@ -8,7 +8,7 @@
     txqueuelen：缓冲区大小；
     RX：接收情形；TX：传送情形；
     ```
-    * 修改网络配置文件
+    * 修改网络配置文件<br>
     **step1：/etc/sysconfig/network-scripts/ifcfg-ens33**
     ```
     这里注意 etc是and so on 来源于法语 et cetera，译为等等；Linux的配置文件一般放在这个文件夹下，意为零碎的东西
