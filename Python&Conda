@@ -1,0 +1,1 @@
+1. 可以使用conda deactivate来退出当前的虚拟环境。出现base的原因是，aconda自动加入了命令到 .bashrc中，在我们打开终端的时候自动执行了conda activate base 命令
