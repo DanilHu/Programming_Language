@@ -92,14 +92,14 @@
    Ctrl PageDown : 屏幕输出向下翻页
    ```
 2. find命令，find的目录在中间，参数在后面
-   > 常用指令：
-   `find ./ maxdepth 1 -type 'l'`按照类型找，后面指定的是路径和查找深度，默认查找深度是最大深度。Linux下的文件就系统定义的七种类型。目录，普通文件。软连接，硬链接……
-   `find ./ maxdepth 1 -name '*.mp3'`按照名字找
-   `find ./ -size +20M -size -50M`按照大小查找，可以大于20M小于50M。注意的是size必须不能掉，且必须是大写的M。kb的话就必须是小写，可以使用man来查看 
-   `find ./ -atime/-mtime/-ctime `按照时间，这里有三个时间，分别是最近访问(attend)，最近更改(属性，比如硬链接和软连接数。modify)，最近更改(内容,change)，这个是按天，cminit按分钟。
+   > 常用指令：<br>
+   `find ./ maxdepth 1 -type 'l'`按照类型找，后面指定的是路径和查找深度，默认查找深度是最大深度。Linux下的文件就系统定义的七种类型。目录，普通文件。软连接，硬链接……<br>
+   `find ./ maxdepth 1 -name '*.mp3'`按照名字找<br>
+   `find ./ -size +20M -size -50M`按照大小查找，可以大于20M小于50M。注意的是size必须不能掉，且必须是大写的M。kb的话就必须是小写，可以使用man来查看 <br>
+   `find ./ -atime/-mtime/-ctime `按照时间，这里有三个时间，分别是最近访问(attend)，最近更改(属性，比如硬链接和软连接数。modify)，最近更改(内容,change)，这个是按天，cminit按分钟。<br>
    `find ./ -type f -exec ls -l {} \;`后面的;是语句的结束，shell编程需要这个;，因此需要转义。-exec可以转换为ok，来询问
-3.grep命令
-   > 常用指令：
-   `grep -r 'copy' ./ -n`找当前目录下(-r代表递归)下文件中含有copy字符的文件，并给出行号
-   `ps aux`显示当前所有的进程，a代表all，u代表usr，x代表显示不需要交互的进程
+3. grep命令
+   > 常用指令：<br>
+   `grep -r 'copy' ./ -n`找当前目录下(-r代表递归)下文件中含有copy字符的文件，并给出行号<br>
+   `ps aux`显示当前所有的进程，a代表all，u代表usr，x代表显示不需要交互的进程<br>
    `ps aux | grep kernel`利用管道来查找当前所有进程中包含所需东西 的内容
