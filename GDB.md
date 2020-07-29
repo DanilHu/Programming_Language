@@ -10,4 +10,5 @@
   f代表format，与printf里面的一致，‘x’, ‘d’, ‘u’, ‘o’, ‘t’, ‘a’, ‘c’, ‘f’, ‘s’。`默认是x`<br>
   u代表每个unit是多少个字节的，b->Bytes, h->Halfwords (two bytes), w->Words (four bytes), g->Giant words (eight bytes)。默认是`4bytes`<br>
   若使用默认的nfu，则不需要"/"
-9. 设置断点后，使用`c`直接到达下一个断点。`clear+linenum`可以清除某一行上的断点。
+9. 设置断点后，使用`c`直接到达下一个断点。`clear+linenum`可以清除某一行上的断点。`delete bnumber`可以清除某一个断点
+10. 让变量名一直显示，使用`display variable`，不想显示用`undisplay variable`。若要显示一片地址的内容，则使用`display/fmt addr`，这里的`fmt`跟x里面的一致 
