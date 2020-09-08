@@ -12,15 +12,16 @@
   若使用默认的nfu，则不需要"/"
 9. 设置断点后，使用`c`直接到达下一个断点。`clear+linenum`可以清除某一行上的断点。`delete bnumber`可以清除某一个断点
 10. 让变量名一直显示，使用`display variable`，不想显示用`undisplay variable`。若要显示一片地址的内容，则使用`display/fmt addr`，这里的`fmt`跟x里面的一致 
-11. layout 使用
-> layout：用于分割窗口，可以一边查看代码，一边测试。主要有以下几种用法：
-  layout src：显示源代码窗口
-  layout asm：显示汇编窗口
-  layout regs：显示源代码/汇编和寄存器窗口
-  layout split：显示源代码和汇编窗口
-  layout next：显示下一个layout
-  layout prev：显示上一个layout
-  Ctrl + L：刷新窗口
-  Ctrl + x，再按1：单窗口模式，显示一个窗口
-  Ctrl + x，再按2：双窗口模式，显示两个窗口
+11. layout：用于分割窗口，可以一边查看代码，一边测试。主要有以下几种用法：
+> layout src：显示源代码窗口<br>
+  layout asm：显示汇编窗口<br>
+  layout regs：显示源代码/汇编和寄存器窗口<br>
+  layout split：显示源代码和汇编窗口<br>
+  layout next：显示下一个layout<br>
+  layout prev：显示上一个layout<br>
+  Ctrl + L：刷新窗口<br>
+  Ctrl + x，再按1：单窗口模式，显示一个窗口<br>
+  Ctrl + x，再按2：双窗口模式，显示两个窗口<br>
   Ctrl + x，再按a：回到传统模式，即退出layout，回到执行layout之前的调试窗口。
+
+  
