@@ -1,4 +1,0 @@
-1. 可以使用conda deactivate来退出当前的虚拟环境。出现base的原因是，aconda自动加入了命令到 .bashrc中，在我们打开终端的时候自动执行了conda activate base 命令
-2. **__call__()方法理解**
-> The __call__ method enables Python programmers to write classes where the instances behave like functions and can be called like a function.
-When the instance is called as a function; if this method is defined, x(arg1, arg2, ...) is a shorthand for x.__call__(arg1, arg2, ...).
