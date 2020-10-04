@@ -20,4 +20,13 @@
     e() 
     ```
 # Pytorch语法
+1. Convert 3d tensor to 4d tensor
+    ```python
+    x = torch.zeros((4,4,4))   # Create 3D tensor 
+    x = x.unsqueeze(0)         # Add dimension as the first axis (1,4,4,4)
 
+    print(x[None].shape)       #  (1,4,4,4)
+    print(x[:,None,:,:].shape) #  (4,1,4,4)
+    print(x[:,:,None,:].shape) #  (4,4,1,4)
+    print(x[:,:,:,None].shape) #  (4,4,4,1)
+    ```
