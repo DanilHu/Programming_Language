@@ -19,6 +19,33 @@
     # __call__ method will be called 
     e() 
     ```
+2. Python装饰器的
+    为了在原的有已经写好的代码中，增加新的功能，而不改变函数本身的逻辑，可以使用python中的装饰器
+    > 
+    ```python
+    def foo():
+        print('i am foo')
+    ```
+    新的需求是希望可以记录函数的执行日志，于是可以添加
+    ```python
+    def foo():
+        print('i am foo')
+        logging.info("foo is running")
+    ```
+    如果这个时候bar(),bar2()也有同样的需求，按照上面的方法改的话，会造成大量重复的代码。
+    ```python
+    def use_logging(func):
+        def wrapper(*args, **kwargs):
+            logging.warn("%s is running" % func.__name__)
+            return func(*args)
+        return wrapper
+    @use_logging
+    def bar():
+        print("i am foo")
+    这样执行bar()函数的时候相当于执行了：
+    bar = use_logging(bar)
+    bar()
+    ```
 # Pytorch语法
 1. Convert 3d tensor to 4d tensor
     ```python
