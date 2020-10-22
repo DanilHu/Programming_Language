@@ -37,3 +37,6 @@
     print(x[:,:,None,:].shape) #  (4,4,1,4)
     print(x[:,:,:,None].shape) #  (4,4,4,1)
     ```
+2. `train/eval`模式对模型的影响：
+    > 这两种模式只对少数模块有影响，比如dropout层和BN层(防止过拟合)<br>
+    以Dropout层为例，在train模式下，dropout会以一定的概率将张量中的元素置为0，同时将所有的元素放大为$\frac{1}{1-p}$，而在eval模式下则不会
