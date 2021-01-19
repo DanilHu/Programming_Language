@@ -51,7 +51,7 @@
     > DNS：域名服务器，每一个域名服务器管理一个区，这个服务器上存储的是该区内所有的主机名到其IP地址的映射<br>
     DHCP：DHCP（动态主机配置协议）是一个局域网的网络协议。指的是由服务器控制一段IP地址范围，客户机登录服务器时就可以自动获得服务器分配的IP地址和子网掩码，因此需要在局域网内有DHCP服务器才行(局域网本身的设计就是用来短距离通信的，只要网线连在一起就不需要访问互联网可以直接通信)。<br>
     路由协议：指导路由器中路由表的生成；包括内部网关协议`RIP——路由信息协议(Routing Information Protocol)`，内部网关协议`OSPF——开放最短路径优先(Open Shortest Path First)`，外部网关协议`BGP——边界网关协议`
-# 基本操作
+# 终端基本操作
 1. 命令行快捷键
    ```
    常用：
@@ -103,6 +103,22 @@
    `grep -r 'copy' ./ -n`找当前目录下(-r代表递归)下文件中含有copy字符的文件，并给出行号<br>
    `ps aux`显示当前所有的进程，a代表all，u代表usr，x代表显示不需要交互的进程<br>
    `ps aux | grep kernel`利用管道来查找当前所有进程中包含所需东西 的内容
+4. 库文件编译
+   ```C++
+   库文件分为动态库(lib库名.so)、静态库(lib库名.a)结尾<br>
+   1. 静态库的制作与使用
+      - gcc -c file1.c -o file1.o, gcc -c file2.c -o file2.o
+      - ar rcs libmylib.a file1.o file2.o //这是专门用来制作静态库的工具，因此不用-o选项进行重命名
+      - gcc main.c libmylib.a -o main -I include_dir// 这里就把静态库当成普通文件进行编译即可(必须源码在前，库在后)，注意头文件的路径要给出
+   2. 动态库的制作与使用
+      - gcc -c file1.c -o file1.o -fPIC, gcc -c file2.c -o file2.o -fPIC //生成与位置无关的代码
+      - gcc -shared -o libmylib.so file1.o file2.o //这里注意加上-o指定名字
+      - gcc main.c -l mylib -L lib_dir -I include_dir //这里注意库名，库路径和头文件路径都要加上
+      - 在使用之前必须指定好动态连接器需要的参数(动态连接器就是运行时的连接器，运行的时候有效，而连接器是运行之前工作的，二者没有任何关系)
+         1. 指定环境变量：export LD_LIBRARY_PATH = ...
+         2. vi /etc/ld.config.d 加入路径，并且sudo ldconfig -v 使配置文件生效
+         3. 将库拷贝到 /lib下，C标准库的位置
+   ```
 # makefile
 就是为了省掉没改变的文件的编译时间<br>
 1个规则：
