@@ -103,9 +103,9 @@
    `grep -r 'copy' ./ -n`找当前目录下(-r代表递归)下文件中含有copy字符的文件，并给出行号<br>
    `ps aux`显示当前所有的进程，a代表all，u代表usr，x代表显示不需要交互的进程<br>
    `ps aux | grep kernel`利用管道来查找当前所有进程中包含所需东西 的内容
-4. 库文件编译
+4. 库文件编译，下载其他第三方库的时候也要遵循这个原则
    ```C++
-   库文件分为动态库(lib库名.so)、静态库(lib库名.a)结尾<br>
+   库文件分为动态库(lib库名.so)、静态库(lib库名.a)结尾
    1. 静态库的制作与使用
       - gcc -c file1.c -o file1.o, gcc -c file2.c -o file2.o
       - ar rcs libmylib.a file1.o file2.o //这是专门用来制作静态库的工具，因此不用-o选项进行重命名
@@ -118,6 +118,10 @@
          1. 指定环境变量：export LD_LIBRARY_PATH = ...
          2. vi /etc/ld.config.d 加入路径，并且sudo ldconfig -v 使配置文件生效
          3. 将库拷贝到 /lib下，C标准库的位置
+    3. VSCODE 设置使用第三方库
+      - launch.json: 设置执行时的参数 最重要的参数是 "preLaunchTask"需要与tasks里里的label保持一致
+      - tasks.json: 设置编译时的参数 最重要的参数是 "args:" 和 "label"
+      - c_cpp_properties.json: 设置头文件路径 最重要的参数是 "includePath":
    ```
 # makefile
 就是为了省掉没改变的文件的编译时间<br>
